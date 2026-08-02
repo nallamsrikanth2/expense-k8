@@ -28,6 +28,25 @@ spec:
       - name: mysql
         image: joindevops/mysql:v1.0
 
+---
+apiVersion: v1
+kind: service
+metadata:
+  name: mysql
+  namespace: expense
+spec:
+  selector:
+    name: mysql
+    project: expense
+    tier: db
+    component: mysql
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+
+
+
 
 
 
