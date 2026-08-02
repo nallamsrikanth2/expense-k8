@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    name: mysql
+    project: expense
+    tier: db
+    component: mysql
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: mysql
+      project: expense
+      tier: db
+      component: mysql
+  template:
+    metadata:
+      labels:
+        name: mysql
+        project: expense
+        tier: db
+        component: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: joindevops/mysql:v1.0
+
+
+
+
