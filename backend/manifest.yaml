@@ -38,13 +38,14 @@ spec:
         image: joindevops/backend:v1.0
         envfrom:
         - configMapRef:
-          name: backend
+            name: backend
 
 ---
 kind: Service
 apiVersion: v1
 metadata:
   name: backend
+  name: expense
 spec:
   selector:
     name: backend
