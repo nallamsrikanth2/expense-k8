@@ -45,7 +45,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: backend
-  name: expense
+  namespace: expense
 spec:
   selector:
     name: backend
