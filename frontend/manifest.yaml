@@ -123,6 +123,13 @@ spec:
       containers:
       - name: frontend
         image: devopsrikanth/frontend:v1.0
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "100mi"
+          limits:
+            cpu: "150m"
+            memory: "256mi"
         volumeMounts:
         - name: nginx-conf
           mountPath: /etc/nginx/nginx.conf
